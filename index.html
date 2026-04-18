@@ -8,7 +8,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
     --ink: #0b0b0d;
@@ -16,7 +16,10 @@
     --gold: #c9a86a;
     --gold-dk: #9d8147;
     --muted: #6b6660;
+    --du-navy: #15243F;
+    --du-cyan: #4CC9E2;
   }
+  .du-wordmark { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 800; letter-spacing: -0.02em; color: var(--du-navy); }
   html, body { background: var(--paper); color: var(--ink); }
   body { font-family: 'Inter', system-ui, sans-serif; }
   .display { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.01em; }
@@ -52,12 +55,13 @@
 <!-- NAV -->
 <header class="w-full">
   <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10.5" stroke="#0b0b0d" stroke-width="1.5"/>
-        <path d="M7.5 7.5 L7.5 13 A4.5 4.5 0 0 0 16.5 13 L16.5 7.5" stroke="#0b0b0d" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <a href="/" class="flex items-center gap-3">
+      <svg width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="DigitalU">
+        <path d="M6 6 H56 V21 H21 V83 H6 Z" fill="#15243F"/>
+        <path d="M94 27 V94 H40 V79 H79 V27 Z" fill="#15243F"/>
+        <rect x="48" y="0" width="32" height="32" fill="#4CC9E2"/>
       </svg>
-      <span class="display text-2xl font-semibold tracking-tight">DigitalU</span>
+      <span class="du-wordmark text-2xl">DigitalU</span>
     </a>
     <nav class="hidden md:flex items-center gap-8 text-sm">
       <a href="#producto" class="hover:text-black">Producto</a>
@@ -360,7 +364,14 @@
 </section>
 
 <footer class="max-w-7xl mx-auto px-6 py-10 flex flex-wrap items-center justify-between gap-4 text-xs muted">
-  <div>© 2026 DigitalU · Querétaro, México · enmx.mx</div>
+  <div class="flex items-center gap-2">
+    <svg width="20" height="20" viewBox="0 0 100 100" fill="none">
+      <path d="M6 6 H56 V21 H21 V83 H6 Z" fill="#15243F"/>
+      <path d="M94 27 V94 H40 V79 H79 V27 Z" fill="#15243F"/>
+      <rect x="48" y="0" width="32" height="32" fill="#4CC9E2"/>
+    </svg>
+    <span>© 2026 DigitalU · Querétaro, México · enmx.mx</span>
+  </div>
   <div class="flex gap-6">
     <a href="#">Privacidad</a>
     <a href="#">Términos</a>

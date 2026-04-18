@@ -6,7 +6,7 @@
 <title>Velum · Panel de confirmaciones</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
 <style>
   :root {
     --ink: #0b0b0d;
@@ -20,6 +20,7 @@
   }
   body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); }
   .display { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em; }
+  .du-wordmark { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-weight: 800; letter-spacing: -0.02em; color: #15243F; }
   .muted { color: var(--muted); }
   .gold { color: var(--gold-dk); }
   .hair { border-color: rgba(11,11,13,.12); }
@@ -53,11 +54,12 @@
   <!-- SIDEBAR -->
   <aside class="w-64 border-r hair p-5 hidden md:flex flex-col">
     <a href="index.html" class="flex items-center gap-2 mb-8">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10.5" stroke="#0b0b0d" stroke-width="1.5"/>
-        <path d="M7.5 7.5 L7.5 13 A4.5 4.5 0 0 0 16.5 13 L16.5 7.5" stroke="#0b0b0d" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <svg width="30" height="30" viewBox="0 0 100 100" fill="none">
+        <path d="M6 6 H56 V21 H21 V83 H6 Z" fill="#15243F"/>
+        <path d="M94 27 V94 H40 V79 H79 V27 Z" fill="#15243F"/>
+        <rect x="48" y="0" width="32" height="32" fill="#4CC9E2"/>
       </svg>
-      <span class="display text-2xl">DigitalU</span>
+      <span class="du-wordmark text-xl">DigitalU</span>
     </a>
 
     <div class="tag muted mb-2">Eventos</div>
