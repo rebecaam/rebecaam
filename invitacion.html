@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Grupo Altana · Cena Anual de Reconocimiento 2026</title>
+<meta name="description" content="23 de mayo de 2026 · Hacienda Galindo · Querétaro" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #14110f;
+    --paper: #f5efe4;
+    --cream: #ebe3d3;
+    --gold: #b7913a;
+    --gold-lt: #d9b662;
+    --muted: #6b6660;
+  }
+  html, body { background: var(--paper); color: var(--ink); }
+  body { font-family: 'Inter', system-ui, sans-serif; font-weight: 300; }
+  .display { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.005em; }
+  .ink { color: var(--ink); }
+  .gold { color: var(--gold); }
+  .bg-ink { background: var(--ink); color: var(--paper); }
+  .bg-cream { background: var(--cream); }
+  .hair { border-color: rgba(20,17,15,.12); }
+  .hair-gold { border-color: var(--gold); }
+  .tag { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+  .serif-i { font-family: 'Cormorant Garamond', serif; font-style: italic; }
+
+  /* floral flourish */
+  .flourish path { stroke: var(--gold); fill: none; stroke-width: 1; }
+
+  .btn-solid { background: var(--ink); color: var(--paper); transition: .15s; }
+  .btn-solid:hover { background: #2a2521; }
+  .btn-line { border: 1px solid var(--ink); transition: .15s; }
+  .btn-line:hover { background: var(--ink); color: var(--paper); }
+
+  .num { font-variant-numeric: tabular-nums; }
+  input, select, textarea { background: transparent; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold); }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at 70% 20%, rgba(183,145,58,.18), transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(183,145,58,.1), transparent 50%),
+      var(--paper);
+  }
+  .reveal { animation: up .8s ease-out both; }
+  @keyframes up { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: translateY(0) } }
+
+  .timeline-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--gold); }
+
+  .success-check {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--gold); color: var(--paper);
+    display: grid; place-items: center;
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- top bar -->
+<div class="w-full bg-ink text-[color:var(--paper)]">
+  <div class="max-w-5xl mx-auto px-6 py-2 flex items-center justify-between text-xs">
+    <a href="index.html" class="opacity-70 hover:opacity-100">← velum</a>
+    <span class="opacity-70">Invitación personal · <span class="serif-i">Srita. Mariana Ibarra</span></span>
+    <span class="opacity-50">velum.mx/altana/cena-2026</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="max-w-3xl mx-auto px-6 pt-16 pb-24 text-center">
+    <!-- monogram / logo -->
+    <div class="flex justify-center mb-10 reveal">
+      <svg width="72" height="72" viewBox="0 0 72 72" class="flourish">
+        <circle cx="36" cy="36" r="28" />
+        <path d="M24 36 Q36 22 48 36 Q36 50 24 36 Z" />
+        <text x="36" y="40" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#b7913a" stroke="none">GA</text>
+      </svg>
+    </div>
+
+    <div class="tag gold reveal" style="animation-delay:.05s">Grupo Altana · XVIII Aniversario</div>
+    <h1 class="display text-5xl md:text-7xl leading-[1.05] mt-6 reveal" style="animation-delay:.1s">
+      Cena Anual de<br /><em class="serif-i" style="color:var(--gold)">Reconocimiento</em>
+    </h1>
+    <p class="display text-xl md:text-2xl mt-8 muted reveal" style="animation-delay:.15s">
+      Nos honra celebrar otro año de trabajo compartido.<br />Acompáñenos en una velada dedicada a nuestra gente.
+    </p>
+
+    <!-- flourish divider -->
+    <div class="flex justify-center my-10 reveal" style="animation-delay:.2s">
+      <svg width="160" height="20" viewBox="0 0 160 20" class="flourish">
+        <path d="M2 10 Q40 2 80 10 Q120 18 158 10" />
+        <circle cx="80" cy="10" r="2.5" fill="#b7913a" stroke="none" />
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto reveal" style="animation-delay:.25s">
+      <div>
+        <div class="tag gold">Fecha</div>
+        <div class="display text-2xl mt-1">Sábado 23</div>
+        <div class="text-sm muted">Mayo 2026</div>
+      </div>
+      <div class="border-x hair">
+        <div class="tag gold">Hora</div>
+        <div class="display text-2xl mt-1">20:00</div>
+        <div class="text-sm muted">Recepción 19:30</div>
+      </div>
+      <div>
+        <div class="tag gold">Lugar</div>
+        <div class="display text-2xl mt-1">Hacienda Galindo</div>
+        <div class="text-sm muted">San Juan del Río, QRO</div>
+      </div>
+    </div>
+
+    <!-- countdown -->
+    <div id="countdown" class="mt-12 flex justify-center gap-4 reveal" style="animation-delay:.3s"></div>
+
+    <div class="mt-10 flex flex-wrap justify-center gap-3 reveal" style="animation-delay:.35s">
+      <a href="#rsvp" class="btn-solid rounded-full px-6 py-3 text-sm">Confirmar asistencia</a>
+      <a href="#programa" class="btn-line rounded-full px-6 py-3 text-sm">Ver programa</a>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGE / QUOTE -->
+<section class="bg-cream">
+  <div class="max-w-3xl mx-auto px-6 py-20 text-center">
+    <svg width="40" height="28" viewBox="0 0 40 28" class="mx-auto flourish"><path d="M2 26 C 2 10 10 4 18 2 M22 26 C 22 10 30 4 38 2" /></svg>
+    <p class="display text-2xl md:text-3xl leading-snug mt-6">
+      "Cada persona que hoy forma parte de Altana es la razón por la que este proyecto sigue de pie. Brindemos por ellos."
+    </p>
+    <p class="tag gold mt-6">— Ing. Fernando Altana Ruiz · Director General</p>
+  </div>
+</section>
+
+<!-- PROGRAMA -->
+<section id="programa" class="max-w-3xl mx-auto px-6 py-24">
+  <div class="text-center mb-12">
+    <div class="tag gold">Programa de la velada</div>
+    <h2 class="display text-4xl md:text-5xl mt-3">Itinerario</h2>
+  </div>
+
+  <ol class="relative pl-8">
+    <span class="absolute left-[5px] top-2 bottom-2 w-px bg-[color:var(--gold)] opacity-30"></span>
+
+    <li class="relative pb-10">
+      <span class="timeline-dot absolute -left-[8px] top-2"></span>
+      <div class="num tag gold">19:30</div>
+      <h3 class="display text-2xl mt-1">Recepción y cóctel de bienvenida</h3>
+      <p class="text-sm muted mt-1">Jardín de las Cúpulas · Música en vivo a cargo del Cuarteto Tequisquiapan.</p>
+    </li>
+
+    <li class="relative pb-10">
+      <span class="timeline-dot absolute -left-[8px] top-2"></span>
+      <div class="num tag gold">20:15</div>
+      <h3 class="display text-2xl mt-1">Palabras del Director General</h3>
+      <p class="text-sm muted mt-1">Ing. Fernando Altana Ruiz · Salón Principal.</p>
+    </li>
+
+    <li class="relative pb-10">
+      <span class="timeline-dot absolute -left-[8px] top-2"></span>
+      <div class="num tag gold">20:45</div>
+      <h3 class="display text-2xl mt-1">Cena de cuatro tiempos</h3>
+      <p class="text-sm muted mt-1">Menú diseñado por Chef Laura Kesselhaut.</p>
+    </li>
+
+    <li class="relative pb-10">
+      <span class="timeline-dot absolute -left-[8px] top-2"></span>
+      <div class="num tag gold">22:00</div>
+      <h3 class="display text-2xl mt-1">Reconocimientos de trayectoria</h3>
+      <p class="text-sm muted mt-1">18 colaboradores con 10+ años · Entrega de presea Altana.</p>
+    </li>
+
+    <li class="relative">
+      <span class="timeline-dot absolute -left-[8px] top-2"></span>
+      <div class="num tag gold">23:00</div>
+      <h3 class="display text-2xl mt-1">Baile y cierre</h3>
+      <p class="text-sm muted mt-1">DJ + open bar hasta las 02:00.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- VENUE & MAP -->
+<section class="bg-cream">
+  <div class="max-w-5xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <div class="tag gold">Cómo llegar</div>
+      <h2 class="display text-4xl mt-3">Hacienda Galindo</h2>
+      <p class="muted mt-4 text-sm leading-relaxed">
+        Carretera Amealco – Galindo Km 5, San Juan del Río, Querétaro.
+        A 45 minutos del centro de Querétaro por la carretera 57.
+      </p>
+      <ul class="text-sm mt-6 space-y-3">
+        <li class="flex gap-3"><span class="gold">◆</span><span><strong>Estacionamiento</strong> sin costo con valet parking.</span></li>
+        <li class="flex gap-3"><span class="gold">◆</span><span><strong>Transporte</strong> ida y vuelta desde Querétaro: autobús 18:30 h (cupo limitado).</span></li>
+        <li class="flex gap-3"><span class="gold">◆</span><span><strong>Hospedaje</strong> convenio en la hacienda · tarifa especial en RSVP.</span></li>
+        <li class="flex gap-3"><span class="gold">◆</span><span><strong>Código</strong> · Formal · Black tie opcional.</span></li>
+      </ul>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="https://maps.google.com/?q=Hacienda+Galindo+Queretaro" target="_blank" class="btn-line rounded-full px-5 py-2 text-sm">Abrir en Maps</a>
+        <a href="#" onclick="addToCalendar(event)" class="btn-line rounded-full px-5 py-2 text-sm">Agregar a calendario</a>
+      </div>
+    </div>
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border hair bg-white relative">
+      <!-- stylized map -->
+      <svg viewBox="0 0 400 300" class="w-full h-full">
+        <defs>
+          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e8dfcd" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="300" fill="#f5efe4"/>
+        <rect width="400" height="300" fill="url(#grid)"/>
+        <path d="M0,180 C80,170 120,200 200,190 S320,140 400,150" stroke="#c9bfa7" stroke-width="2" fill="none"/>
+        <path d="M40,0 Q100,80 80,180 T120,300" stroke="#d6cbb2" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+        <circle cx="280" cy="160" r="8" fill="#b7913a"/>
+        <circle cx="280" cy="160" r="18" fill="#b7913a" opacity="0.2"/>
+        <text x="298" y="164" font-family="Cormorant Garamond" font-size="18" fill="#14110f">Hacienda Galindo</text>
+        <circle cx="90" cy="240" r="4" fill="#14110f"/>
+        <text x="100" y="244" font-family="Inter" font-size="10" fill="#6b6660">Querétaro centro</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp" class="max-w-2xl mx-auto px-6 py-24">
+  <div class="text-center mb-10">
+    <div class="tag gold">Confirmación</div>
+    <h2 class="display text-4xl md:text-5xl mt-3">Su asistencia nos importa</h2>
+    <p class="muted mt-3 text-sm">Favor de confirmar antes del <strong>10 de mayo</strong>. Su invitación incluye <strong>un acompañante</strong>.</p>
+  </div>
+
+  <form id="rsvpForm" class="space-y-6 border hair rounded-2xl p-8 bg-white">
+    <div>
+      <label class="tag gold">Nombre del invitado</label>
+      <input type="text" value="Mariana Ibarra" class="w-full mt-2 pb-2 border-b hair display text-2xl" />
+    </div>
+
+    <div>
+      <label class="tag gold">¿Podrá acompañarnos?</label>
+      <div class="mt-3 grid grid-cols-2 gap-3">
+        <label class="btn-line rounded-full px-5 py-3 text-center text-sm cursor-pointer">
+          <input type="radio" name="asist" value="yes" class="hidden" checked />
+          Sí, asistiré
+        </label>
+        <label class="btn-line rounded-full px-5 py-3 text-center text-sm cursor-pointer">
+          <input type="radio" name="asist" value="no" class="hidden" />
+          No podré asistir
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <label class="tag gold">Acompañante</label>
+      <input type="text" placeholder="Nombre completo (opcional)" class="w-full mt-2 pb-2 border-b hair text-base" />
+    </div>
+
+    <div>
+      <label class="tag gold">Preferencia alimenticia</label>
+      <select class="w-full mt-2 pb-2 border-b hair text-base">
+        <option>Sin restricción</option>
+        <option>Vegetariana</option>
+        <option>Vegana</option>
+        <option>Sin gluten</option>
+        <option>Otra (especificar en mensaje)</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="tag gold">¿Requiere transporte desde Querétaro?</label>
+      <div class="mt-2 flex gap-4 text-sm">
+        <label class="flex items-center gap-2"><input type="radio" name="trans" checked /> No</label>
+        <label class="flex items-center gap-2"><input type="radio" name="trans" /> Sí, 1 lugar</label>
+        <label class="flex items-center gap-2"><input type="radio" name="trans" /> Sí, 2 lugares</label>
+      </div>
+    </div>
+
+    <div>
+      <label class="tag gold">Mensaje al anfitrión (opcional)</label>
+      <textarea rows="3" placeholder="Algo que quiera compartir..." class="w-full mt-2 pb-2 border-b hair text-base"></textarea>
+    </div>
+
+    <button type="submit" class="btn-solid w-full rounded-full py-4 text-sm tracking-wider">
+      Enviar confirmación
+    </button>
+  </form>
+
+  <!-- success state (hidden initially) -->
+  <div id="rsvpSuccess" class="hidden text-center py-12">
+    <div class="success-check mx-auto">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3 class="display text-4xl mt-6">¡Gracias, Mariana!</h3>
+    <p class="muted mt-3">Su asistencia ha sido registrada. Le enviaremos un recordatorio 3 días antes del evento, junto con el pase digital de acceso.</p>
+    <div class="flex flex-wrap gap-3 justify-center mt-6">
+      <a href="#" class="btn-line rounded-full px-5 py-2 text-sm">Agregar a calendario</a>
+      <a href="dashboard.html" class="btn-line rounded-full px-5 py-2 text-sm">Ver pase digital</a>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT / LOGISTICS extra -->
+<section class="bg-cream">
+  <div class="max-w-4xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-8 text-center">
+    <div>
+      <div class="tag gold">Vestimenta</div>
+      <h3 class="display text-2xl mt-2">Formal</h3>
+      <p class="text-sm muted mt-2">Black tie opcional.<br />Colores neutros, evitar blanco.</p>
+    </div>
+    <div>
+      <div class="tag gold">Regalos</div>
+      <h3 class="display text-2xl mt-2">Sin obsequios</h3>
+      <p class="text-sm muted mt-2">Su presencia es el mejor de los regalos.</p>
+    </div>
+    <div>
+      <div class="tag gold">Contacto</div>
+      <h3 class="display text-2xl mt-2">Coordinación</h3>
+      <p class="text-sm muted mt-2">Lic. Paulina Orozco<br />442 · 214 · 5580</p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-ink text-[color:var(--paper)]">
+  <div class="max-w-3xl mx-auto px-6 py-14 text-center">
+    <svg width="40" height="40" viewBox="0 0 72 72" class="mx-auto flourish" style="opacity:.6">
+      <circle cx="36" cy="36" r="28" />
+      <text x="36" y="40" text-anchor="middle" font-family="Cormorant Garamond" font-size="14" fill="#b7913a" stroke="none">GA</text>
+    </svg>
+    <p class="display text-2xl mt-5">Los esperamos con entusiasmo.</p>
+    <p class="text-xs opacity-50 mt-8">Invitación personal e intransferible · Grupo Altana, S.A. de C.V.</p>
+    <p class="text-xs opacity-30 mt-2">Hecha con velum · <a href="index.html" class="underline">velum.mx</a></p>
+  </div>
+</footer>
+
+<script>
+  // Countdown
+  const target = new Date('2026-05-23T20:00:00-06:00').getTime();
+  const el = document.getElementById('countdown');
+  function unit(n, label) {
+    return `<div class="text-center">
+      <div class="display text-5xl num">${String(n).padStart(2,'0')}</div>
+      <div class="tag muted mt-1">${label}</div>
+    </div>`;
+  }
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) { el.innerHTML = '<div class="display text-3xl">Hoy es el día</div>'; return; }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    el.innerHTML = [unit(d,'Días'), unit(h,'Horas'), unit(m,'Min'), unit(s,'Seg')].join('<div class="display text-4xl opacity-30">·</div>');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // RSVP submit
+  const form = document.getElementById('rsvpForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    document.getElementById('rsvpSuccess').classList.remove('hidden');
+    window.scrollTo({ top: document.getElementById('rsvp').offsetTop - 40, behavior: 'smooth' });
+  });
+
+  // Selected radio styling for asistencia
+  document.querySelectorAll('input[name="asist"]').forEach(r => {
+    const sync = () => {
+      document.querySelectorAll('input[name="asist"]').forEach(x => {
+        const lbl = x.closest('label');
+        if (x.checked) { lbl.style.background = 'var(--ink)'; lbl.style.color = 'var(--paper)'; }
+        else { lbl.style.background = ''; lbl.style.color = ''; }
+      });
+    };
+    r.addEventListener('change', sync);
+    sync();
+  });
+
+  function addToCalendar(e) {
+    e.preventDefault();
+    const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Cena Anual Grupo Altana
+DTSTART:20260523T200000
+DTEND:20260524T020000
+LOCATION:Hacienda Galindo, San Juan del Río, Querétaro
+DESCRIPTION:XVIII Aniversario Grupo Altana
+END:VEVENT
+END:VCALENDAR`;
+    const blob = new Blob([ics], { type: 'text/calendar' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'altana-cena.ics'; a.click();
+  }
+</script>
+</body>
+</html>

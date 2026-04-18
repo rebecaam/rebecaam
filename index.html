@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Velum · Invitaciones digitales para eventos corporativos en Querétaro</title>
+<meta name="description" content="Micrositios de invitación premium con RSVP en tiempo real, dashboard y branding propio. Diseñado para organizadores de eventos y empresas en Querétaro." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0b0b0d;
+    --paper: #f7f3ee;
+    --gold: #c9a86a;
+    --gold-dk: #9d8147;
+    --muted: #6b6660;
+  }
+  html, body { background: var(--paper); color: var(--ink); }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .display { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.01em; }
+  .ink { color: var(--ink); }
+  .muted { color: var(--muted); }
+  .gold { color: var(--gold-dk); }
+  .bg-ink { background: var(--ink); }
+  .bg-paper { background: var(--paper); }
+  .border-ink { border-color: var(--ink); }
+  .ring-gold { box-shadow: inset 0 0 0 1px var(--gold); }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: #1a1a1f; }
+  .btn-ghost { border: 1px solid rgba(11,11,13,.15); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .hairline { border-top: 1px solid rgba(11,11,13,.12); }
+  .grain {
+    background-image: radial-gradient(rgba(11,11,13,.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+  .glow {
+    background: radial-gradient(ellipse at top, rgba(201,168,106,.18), transparent 60%);
+  }
+  .kbd { font-family: ui-monospace, Menlo, monospace; font-size: 11px; padding: 2px 6px; border: 1px solid rgba(11,11,13,.2); border-radius: 4px; }
+  .card { background: #fff; border: 1px solid rgba(11,11,13,.08); }
+  .tag { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+  .link-underline { background-image: linear-gradient(var(--ink), var(--ink)); background-size: 100% 1px; background-repeat: no-repeat; background-position: 0 100%; }
+  details[open] .chev { transform: rotate(90deg); }
+  .chev { transition: transform .2s; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="w-full">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M1 1 L11 21 L21 1" stroke="#0b0b0d" stroke-width="1.5"/></svg>
+      <span class="display text-2xl font-semibold tracking-tight">velum</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#producto" class="hover:text-black">Producto</a>
+      <a href="#casos" class="hover:text-black">Casos de uso</a>
+      <a href="#precios" class="hover:text-black">Precios</a>
+      <a href="#faq" class="hover:text-black">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="dashboard.html" class="hidden sm:inline text-sm btn-ghost rounded-full px-4 py-2">Ver dashboard</a>
+      <a href="invitacion.html" class="text-sm btn-primary rounded-full px-4 py-2">Ver demo</a>
+    </div>
+  </div>
+  <div class="hairline"></div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="glow absolute inset-0 pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-24 relative">
+    <div class="tag gold mb-6">Para organizadores · Querétaro · 2026</div>
+    <h1 class="display text-5xl md:text-7xl leading-[1.02] max-w-4xl">
+      Invitaciones digitales con el cuidado de un <em class="not-italic gold">evento impreso</em> y la inteligencia de un CRM.
+    </h1>
+    <p class="mt-8 max-w-2xl text-lg muted">
+      Micrositios premium para lanzamientos, galas, cenas ejecutivas y convenciones. RSVP en tiempo real, branding propio de tu marca o la de tu cliente, y un dashboard para dejar de perseguir confirmaciones por WhatsApp.
+    </p>
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <a href="invitacion.html" class="btn-primary rounded-full px-6 py-3 text-sm font-medium">Ver invitación demo →</a>
+      <a href="dashboard.html" class="btn-ghost rounded-full px-6 py-3 text-sm font-medium">Ver dashboard de confirmaciones</a>
+      <span class="text-sm muted hidden md:inline">o presiona <span class="kbd">D</span> para el demo</span>
+    </div>
+
+    <!-- Hero device frame -->
+    <div class="mt-20 relative">
+      <div class="grid md:grid-cols-12 gap-6 items-end">
+        <div class="md:col-span-7 card rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-neutral-300"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-neutral-300"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-neutral-300"></span>
+            </div>
+            <span class="text-xs muted">velum.mx/altana/cena-2026</span>
+            <span class="w-4"></span>
+          </div>
+          <div class="rounded-xl bg-ink text-[color:var(--paper)] p-10 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 80% 20%, #c9a86a 0%, transparent 60%)"></div>
+            <div class="relative">
+              <div class="tag" style="color:var(--gold)">Grupo Altana · 18 años</div>
+              <h3 class="display text-4xl mt-3">Cena Anual de Reconocimiento</h3>
+              <p class="mt-2 text-sm opacity-70">Sábado 23 de mayo · Hacienda Galindo · Querétaro</p>
+              <div class="mt-6 flex gap-3 text-xs">
+                <span class="ring-gold px-3 py-1 rounded-full">Confirmar asistencia</span>
+                <span class="ring-gold px-3 py-1 rounded-full">Programa</span>
+                <span class="ring-gold px-3 py-1 rounded-full">Cómo llegar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 space-y-4">
+          <div class="card rounded-2xl p-5">
+            <div class="flex items-center justify-between">
+              <div class="tag muted">Confirmaciones en vivo</div>
+              <span class="text-xs gold">● activo</span>
+            </div>
+            <div class="flex items-baseline gap-2 mt-3">
+              <span class="display text-5xl">186</span>
+              <span class="text-sm muted">de 240 invitados</span>
+            </div>
+            <div class="mt-4 h-2 rounded-full bg-neutral-200 overflow-hidden">
+              <div class="h-full bg-ink" style="width:77.5%"></div>
+            </div>
+            <div class="mt-3 flex justify-between text-xs muted">
+              <span>77.5% confirmado</span>
+              <span>22 pendientes</span>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-5">
+            <div class="tag muted mb-3">Últimas respuestas</div>
+            <ul class="text-sm space-y-2">
+              <li class="flex justify-between"><span>Mariana Ibarra <span class="muted">+1</span></span><span class="gold">Asistirá</span></li>
+              <li class="flex justify-between"><span>Ricardo Solís</span><span class="muted">Declinó</span></li>
+              <li class="flex justify-between"><span>Ana Paula Zúñiga <span class="muted">+1</span></span><span class="gold">Asistirá</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO STRIP -->
+<section class="hairline">
+  <div class="max-w-7xl mx-auto px-6 py-10 flex flex-wrap gap-x-12 gap-y-4 items-center">
+    <span class="tag muted">Pensado para el tipo de eventos que organizan</span>
+    <span class="display text-xl">Kenworth</span>
+    <span class="display text-xl">Safran</span>
+    <span class="display text-xl">Grupo Altana</span>
+    <span class="display text-xl">Bombardier</span>
+    <span class="display text-xl">Mabe</span>
+    <span class="display text-xl">CIE</span>
+  </div>
+  <div class="hairline"></div>
+</section>
+
+<!-- PRODUCTO -->
+<section id="producto" class="max-w-7xl mx-auto px-6 py-24">
+  <div class="grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4">
+      <div class="tag gold mb-4">Producto</div>
+      <h2 class="display text-4xl md:text-5xl leading-tight">Todo lo que una invitación impresa nunca pudo hacer.</h2>
+      <p class="mt-6 muted">Cada evento vive en un micrositio con URL propia. Lo envías por WhatsApp, correo o QR y los invitados confirman en segundos.</p>
+    </div>
+    <div class="md:col-span-8 grid sm:grid-cols-2 gap-4">
+
+      <div class="card rounded-2xl p-6">
+        <div class="tag gold">01</div>
+        <h3 class="display text-2xl mt-2">RSVP inteligente</h3>
+        <p class="muted mt-2 text-sm">Nombre pre-cargado, pases asignados por invitado, preferencias alimenticias y mensaje al anfitrión.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="tag gold">02</div>
+        <h3 class="display text-2xl mt-2">Branding de marca</h3>
+        <p class="muted mt-2 text-sm">Tipografía, paleta y logos de tu cliente. Cada invitación se siente hecha a medida.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="tag gold">03</div>
+        <h3 class="display text-2xl mt-2">Dashboard en vivo</h3>
+        <p class="muted mt-2 text-sm">Conteo por mesa, filtros, exportación a CSV y notificaciones de nuevas respuestas al equipo.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="tag gold">04</div>
+        <h3 class="display text-2xl mt-2">Envío por WhatsApp</h3>
+        <p class="muted mt-2 text-sm">Plantilla pre-armada con el nombre del invitado y link único. Recordatorios automáticos 7 / 3 / 1 día antes.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="tag gold">05</div>
+        <h3 class="display text-2xl mt-2">Check-in con QR</h3>
+        <p class="muted mt-2 text-sm">Pase digital y validación en la entrada desde cualquier celular del staff.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="tag gold">06</div>
+        <h3 class="display text-2xl mt-2">Logística local</h3>
+        <p class="muted mt-2 text-sm">Mapas a venues de Querétaro, hoteles convenio, bloques de transporte y estacionamiento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS -->
+<section id="casos" class="bg-ink text-[color:var(--paper)] py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="tag mb-4" style="color:var(--gold)">Casos de uso</div>
+    <h2 class="display text-4xl md:text-5xl max-w-3xl">Un mismo motor, distintas ocasiones.</h2>
+    <div class="grid md:grid-cols-4 gap-6 mt-12">
+      <div class="border border-white/15 rounded-2xl p-6">
+        <h3 class="display text-2xl">Lanzamientos</h3>
+        <p class="text-sm opacity-70 mt-2">Nuevo producto, apertura de planta, ribbon-cutting.</p>
+      </div>
+      <div class="border border-white/15 rounded-2xl p-6">
+        <h3 class="display text-2xl">Galas & cenas</h3>
+        <p class="text-sm opacity-70 mt-2">Reconocimiento anual, cena de socios, navidad corporativa.</p>
+      </div>
+      <div class="border border-white/15 rounded-2xl p-6">
+        <h3 class="display text-2xl">Convenciones</h3>
+        <p class="text-sm opacity-70 mt-2">Agenda por tracks, speakers, talleres con cupo.</p>
+      </div>
+      <div class="border border-white/15 rounded-2xl p-6">
+        <h3 class="display text-2xl">Integración</h3>
+        <p class="text-sm opacity-70 mt-2">Offsites, team building, ruedas de negocios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios" class="max-w-7xl mx-auto px-6 py-24">
+  <div class="tag gold mb-4">Precios</div>
+  <h2 class="display text-4xl md:text-5xl max-w-3xl">Pagas por evento. Sin mensualidades.</h2>
+  <p class="muted mt-4 max-w-2xl">Para agencias y organizadores ofrecemos paquete anual con volumen. Facturamos con IVA.</p>
+
+  <div class="grid md:grid-cols-3 gap-6 mt-12">
+    <div class="card rounded-2xl p-8">
+      <h3 class="display text-3xl">Esencial</h3>
+      <div class="mt-2 flex items-baseline gap-1">
+        <span class="display text-5xl">$2,490</span>
+        <span class="muted text-sm">MXN / evento</span>
+      </div>
+      <p class="muted text-sm mt-4">Hasta 80 invitados. Plantilla elegida. RSVP y dashboard básico.</p>
+      <ul class="text-sm mt-6 space-y-2">
+        <li>· Dominio velum.mx/tu-evento</li>
+        <li>· Soporte por correo</li>
+        <li>· Recordatorios por WhatsApp (link)</li>
+      </ul>
+    </div>
+
+    <div class="card rounded-2xl p-8 ring-gold relative">
+      <span class="absolute -top-3 left-6 tag bg-ink text-[color:var(--paper)] px-3 py-1 rounded-full">Más elegido</span>
+      <h3 class="display text-3xl">Corporativo</h3>
+      <div class="mt-2 flex items-baseline gap-1">
+        <span class="display text-5xl">$5,900</span>
+        <span class="muted text-sm">MXN / evento</span>
+      </div>
+      <p class="muted text-sm mt-4">Hasta 300 invitados. Branding de marca. QR check-in.</p>
+      <ul class="text-sm mt-6 space-y-2">
+        <li>· Subdominio propio (ej. rsvp.grupoaltana.mx)</li>
+        <li>· Dashboard con filtros y exportación</li>
+        <li>· WhatsApp Business API</li>
+        <li>· Soporte prioritario el día del evento</li>
+      </ul>
+    </div>
+
+    <div class="card rounded-2xl p-8">
+      <h3 class="display text-3xl">Agencia</h3>
+      <div class="mt-2 flex items-baseline gap-1">
+        <span class="display text-5xl">A medida</span>
+      </div>
+      <p class="muted text-sm mt-4">Para organizadoras con 10+ eventos al año. White-label total.</p>
+      <ul class="text-sm mt-6 space-y-2">
+        <li>· Tu dominio y tu marca</li>
+        <li>· Multi-cliente con permisos</li>
+        <li>· Onboarding + plantillas dedicadas</li>
+        <li>· Facturación consolidada</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="max-w-7xl mx-auto px-6 py-20">
+  <div class="grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4">
+      <div class="tag gold mb-4">Preguntas frecuentes</div>
+      <h2 class="display text-4xl">Lo que suelen preguntar.</h2>
+    </div>
+    <div class="md:col-span-8 divide-y divide-black/10 border-y border-black/10">
+      <details class="py-5 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="display text-xl">¿Puedo usar la tipografía y colores de mi cliente?</span>
+          <span class="chev">→</span>
+        </summary>
+        <p class="muted mt-3 text-sm">Sí. En el plan Corporativo y Agencia configuramos paleta, tipografías (Adobe Fonts / Google Fonts / custom) y logos. La invitación se ve como una pieza hecha en casa.</p>
+      </details>
+      <details class="py-5 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="display text-xl">¿Cómo se envía la invitación?</span>
+          <span class="chev">→</span>
+        </summary>
+        <p class="muted mt-3 text-sm">Te entregamos la lista con un link único por invitado. Lo puedes mandar por WhatsApp, correo o integrarlo a la plantilla de WhatsApp Business API.</p>
+      </details>
+      <details class="py-5 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="display text-xl">¿Quién es dueño de los datos?</span>
+          <span class="chev">→</span>
+        </summary>
+        <p class="muted mt-3 text-sm">El cliente. Exportas todo en CSV al final del evento y los datos se eliminan a los 90 días si no renuevas. Cumplimos Ley Federal de Protección de Datos.</p>
+      </details>
+      <details class="py-5 cursor-pointer">
+        <summary class="flex justify-between items-center list-none">
+          <span class="display text-xl">¿En cuánto tiempo tienen lista la invitación?</span>
+          <span class="chev">→</span>
+        </summary>
+        <p class="muted mt-3 text-sm">Con plantilla existente, 48 horas. Con diseño a medida, entre 7 y 10 días hábiles.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-ink text-[color:var(--paper)]">
+  <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-8 items-center">
+    <h2 class="display text-4xl md:text-5xl">¿Organizas eventos? Probemos con uno.</h2>
+    <div class="flex flex-wrap gap-4 md:justify-end">
+      <a href="invitacion.html" class="rounded-full px-6 py-3 text-sm" style="background:var(--gold);color:var(--ink)">Ver invitación demo</a>
+      <a href="mailto:hola@velum.mx" class="rounded-full px-6 py-3 text-sm ring-gold">Agendar 15 min</a>
+    </div>
+  </div>
+</section>
+
+<footer class="max-w-7xl mx-auto px-6 py-10 flex flex-wrap items-center justify-between gap-4 text-xs muted">
+  <div>© 2026 Velum · Querétaro, México</div>
+  <div class="flex gap-6">
+    <a href="#">Privacidad</a>
+    <a href="#">Términos</a>
+    <a href="mailto:hola@velum.mx">hola@velum.mx</a>
+  </div>
+</footer>
+
+<script>
+  // shortcut: press "d" to open demo
+  document.addEventListener('keydown', (e) => {
+    if (e.key.toLowerCase() === 'd' && !e.metaKey && !e.ctrlKey && document.activeElement.tagName !== 'INPUT') {
+      window.location.href = 'invitacion.html';
+    }
+  });
+</script>
+</body>
+</html>

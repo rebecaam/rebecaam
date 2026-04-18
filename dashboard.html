@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Velum · Panel de confirmaciones</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0b0b0d;
+    --paper: #f7f3ee;
+    --gold: #c9a86a;
+    --gold-dk: #9d8147;
+    --muted: #6b6660;
+    --ok: #2f7a4a;
+    --no: #a53a2a;
+    --pend: #8a7741;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--paper); color: var(--ink); }
+  .display { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.01em; }
+  .muted { color: var(--muted); }
+  .gold { color: var(--gold-dk); }
+  .hair { border-color: rgba(11,11,13,.12); }
+  .card { background: #fff; border: 1px solid rgba(11,11,13,.08); border-radius: 16px; }
+  .tag { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; }
+  .num { font-variant-numeric: tabular-nums; }
+  .pill { padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; }
+  .pill-ok { background: #e8f1ea; color: var(--ok); }
+  .pill-no { background: #f5e6e1; color: var(--no); }
+  .pill-pend { background: #f3ecd7; color: var(--pend); }
+  .btn { padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 500; }
+  .btn-dark { background: var(--ink); color: var(--paper); }
+  .btn-dark:hover { background: #1a1a1f; }
+  .btn-ghost { border: 1px solid rgba(11,11,13,.15); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .sidebar-item { padding: 8px 12px; border-radius: 10px; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+  .sidebar-item.active { background: rgba(11,11,13,.06); font-weight: 500; }
+  .sidebar-item:hover:not(.active) { background: rgba(11,11,13,.03); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  input { background: transparent; outline: none; }
+  .sparkbar { background: var(--ink); border-radius: 2px; }
+  .tbl tr:hover td { background: #fafafa; }
+  .filter-chip { padding: 6px 12px; border: 1px solid rgba(11,11,13,.15); border-radius: 999px; font-size: 12px; cursor: pointer; }
+  .filter-chip.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+</style>
+</head>
+<body class="antialiased">
+
+<div class="flex min-h-screen">
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 border-r hair p-5 hidden md:flex flex-col">
+    <a href="index.html" class="flex items-center gap-2 mb-8">
+      <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><path d="M1 1 L11 21 L21 1" stroke="#0b0b0d" stroke-width="1.5"/></svg>
+      <span class="display text-2xl">velum</span>
+    </a>
+
+    <div class="tag muted mb-2">Eventos</div>
+    <nav class="space-y-1 mb-8">
+      <a class="sidebar-item active">
+        <span class="dot" style="background:var(--gold)"></span>
+        <div class="flex-1 min-w-0">
+          <div class="truncate">Cena Altana 2026</div>
+          <div class="text-[11px] muted">23 may · 240 invitados</div>
+        </div>
+      </a>
+      <a class="sidebar-item">
+        <span class="dot" style="background:#8a7741"></span>
+        <div class="flex-1 min-w-0">
+          <div class="truncate">Lanzamiento Kenworth T680</div>
+          <div class="text-[11px] muted">07 jun · 120 invitados</div>
+        </div>
+      </a>
+      <a class="sidebar-item">
+        <span class="dot" style="background:#bbb"></span>
+        <div class="flex-1 min-w-0">
+          <div class="truncate">Gala CANACINTRA</div>
+          <div class="text-[11px] muted">12 sep · 480 invitados</div>
+        </div>
+      </a>
+    </nav>
+
+    <div class="tag muted mb-2">Herramientas</div>
+    <nav class="space-y-1">
+      <a class="sidebar-item">◼ Plantillas</a>
+      <a class="sidebar-item">◇ Invitados</a>
+      <a class="sidebar-item">⬡ Mesas y planos</a>
+      <a class="sidebar-item">↗ Exportar</a>
+      <a class="sidebar-item">⚙ Ajustes</a>
+    </nav>
+
+    <div class="mt-auto pt-6 border-t hair">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-[color:var(--ink)] text-[color:var(--paper)] grid place-items-center text-sm font-medium">PO</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm truncate">Paulina Orozco</div>
+          <div class="text-[11px] muted">Organizadora · Altana</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 min-w-0">
+    <!-- Top bar -->
+    <div class="border-b hair px-6 py-4 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <a href="index.html" class="text-sm muted hover:text-black md:hidden">←</a>
+        <div class="min-w-0">
+          <div class="tag gold">Evento activo</div>
+          <h1 class="display text-2xl truncate">Cena Anual de Reconocimiento · Grupo Altana</h1>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="invitacion.html" class="btn btn-ghost hidden sm:inline">Ver invitación</a>
+        <button class="btn btn-dark">Exportar CSV</button>
+      </div>
+    </div>
+
+    <div class="p-6 space-y-6">
+
+      <!-- KPI row -->
+      <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="card p-5">
+          <div class="tag muted">Invitados</div>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="display text-4xl num">240</span>
+          </div>
+          <div class="text-xs muted mt-1">186 únicos + 54 acompañantes</div>
+        </div>
+        <div class="card p-5">
+          <div class="tag" style="color:var(--ok)">Confirmados</div>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="display text-4xl num">186</span>
+            <span class="text-sm" style="color:var(--ok)">+12 hoy</span>
+          </div>
+          <div class="h-1.5 rounded-full bg-neutral-200 mt-3 overflow-hidden">
+            <div class="h-full" style="width:77.5%;background:var(--ok)"></div>
+          </div>
+        </div>
+        <div class="card p-5">
+          <div class="tag" style="color:var(--pend)">Pendientes</div>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="display text-4xl num">32</span>
+          </div>
+          <div class="text-xs muted mt-1">Último recordatorio hace 2 d</div>
+        </div>
+        <div class="card p-5">
+          <div class="tag" style="color:var(--no)">Declinaron</div>
+          <div class="flex items-baseline gap-2 mt-2">
+            <span class="display text-4xl num">22</span>
+          </div>
+          <div class="text-xs muted mt-1">9.2% del total</div>
+        </div>
+      </section>
+
+      <!-- Chart + side -->
+      <section class="grid md:grid-cols-3 gap-4">
+        <div class="card p-6 md:col-span-2">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <div class="tag muted">Confirmaciones por día</div>
+              <h3 class="display text-2xl">Últimos 14 días</h3>
+            </div>
+            <div class="flex gap-2">
+              <span class="filter-chip active">14 d</span>
+              <span class="filter-chip">30 d</span>
+              <span class="filter-chip">Total</span>
+            </div>
+          </div>
+          <!-- bar chart -->
+          <div class="flex items-end gap-2 h-40">
+            <!-- 14 bars, values -->
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:18%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:22%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:14%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:38%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:55%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:42%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:30%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:48%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:60%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:72%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:55%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:80%"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:92%;background:var(--gold-dk)"></div></div>
+            <div class="flex-1 flex flex-col items-center gap-1"><div class="sparkbar w-full" style="height:100%;background:var(--gold-dk)"></div></div>
+          </div>
+          <div class="flex justify-between text-[11px] muted mt-2">
+            <span>5 abr</span><span>18 abr (hoy)</span>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="tag muted mb-4">Logística reportada</div>
+          <ul class="space-y-4 text-sm">
+            <li class="flex justify-between"><span>Transporte desde QRO</span><span class="num gold">38 lugares</span></li>
+            <li class="flex justify-between"><span>Hospedaje en hacienda</span><span class="num gold">26 habs.</span></li>
+            <li class="flex justify-between"><span>Menú vegetariano</span><span class="num gold">14</span></li>
+            <li class="flex justify-between"><span>Menú sin gluten</span><span class="num gold">7</span></li>
+            <li class="flex justify-between"><span>Requieren acceso móvil</span><span class="num gold">3</span></li>
+          </ul>
+          <button class="btn btn-ghost w-full mt-6">Ver detalle operativo</button>
+        </div>
+      </section>
+
+      <!-- Filters + search -->
+      <section class="card p-4 flex flex-wrap items-center gap-3">
+        <div class="flex items-center gap-2 flex-1 min-w-[200px]">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b6660" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input placeholder="Buscar invitado, empresa o mesa…" class="flex-1 text-sm py-1" />
+        </div>
+        <div class="flex gap-2 flex-wrap">
+          <span class="filter-chip active">Todos (240)</span>
+          <span class="filter-chip">Confirmados (186)</span>
+          <span class="filter-chip">Pendientes (32)</span>
+          <span class="filter-chip">Declinaron (22)</span>
+        </div>
+      </section>
+
+      <!-- Guest table -->
+      <section class="card overflow-hidden">
+        <table class="w-full text-sm tbl">
+          <thead class="text-left tag muted border-b hair">
+            <tr>
+              <th class="px-5 py-3">Invitado</th>
+              <th class="px-5 py-3 hidden md:table-cell">Empresa / rol</th>
+              <th class="px-5 py-3">Pases</th>
+              <th class="px-5 py-3 hidden lg:table-cell">Mesa</th>
+              <th class="px-5 py-3">Estado</th>
+              <th class="px-5 py-3 hidden md:table-cell">Respondido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b hair">
+              <td class="px-5 py-4"><div class="font-medium">Mariana Ibarra</div><div class="text-[12px] muted">mibarra@altana.mx</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">Altana · Dir. Operaciones</td>
+              <td class="px-5 py-4 num">2 de 2</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">Mesa 3</td>
+              <td class="px-5 py-4"><span class="pill pill-ok">Asistirá</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">hace 3 min</td>
+            </tr>
+            <tr class="border-b hair">
+              <td class="px-5 py-4"><div class="font-medium">Ricardo Solís</div><div class="text-[12px] muted">r.solis@altana.mx</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">Altana · Finanzas</td>
+              <td class="px-5 py-4 num">0 de 2</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">—</td>
+              <td class="px-5 py-4"><span class="pill pill-no">Declinó</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">hace 1 h</td>
+            </tr>
+            <tr class="border-b hair">
+              <td class="px-5 py-4"><div class="font-medium">Ana Paula Zúñiga</div><div class="text-[12px] muted">apzuniga@gmail.com</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">Invitada externa</td>
+              <td class="px-5 py-4 num">2 de 2</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">Mesa 7</td>
+              <td class="px-5 py-4"><span class="pill pill-ok">Asistirá</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">hace 2 h</td>
+            </tr>
+            <tr class="border-b hair">
+              <td class="px-5 py-4"><div class="font-medium">Lic. Fernando Altana Ruiz</div><div class="text-[12px] muted">presidencia@altana.mx</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">Altana · Director General</td>
+              <td class="px-5 py-4 num">4 de 4</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">Mesa 1</td>
+              <td class="px-5 py-4"><span class="pill pill-ok">Asistirá</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">ayer</td>
+            </tr>
+            <tr class="border-b hair">
+              <td class="px-5 py-4"><div class="font-medium">Ing. Carlos Mendoza</div><div class="text-[12px] muted">c.mendoza@altana.mx</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">Altana · Planta QRO</td>
+              <td class="px-5 py-4 num">—</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">—</td>
+              <td class="px-5 py-4"><span class="pill pill-pend">Pendiente</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">—</td>
+            </tr>
+            <tr class="border-b hair">
+              <td class="px-5 py-4"><div class="font-medium">Regina Cortés</div><div class="text-[12px] muted">regina@cortesarq.com</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">Cortés Arquitectos · Socia</td>
+              <td class="px-5 py-4 num">1 de 2</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">Mesa 9</td>
+              <td class="px-5 py-4"><span class="pill pill-ok">Asistirá</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">hace 5 h</td>
+            </tr>
+            <tr class="border-b hair">
+              <td class="px-5 py-4"><div class="font-medium">Mauricio Beltrán</div><div class="text-[12px] muted">mbeltran@gmail.com</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">Kenworth · Compras</td>
+              <td class="px-5 py-4 num">—</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">—</td>
+              <td class="px-5 py-4"><span class="pill pill-pend">Pendiente</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">—</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-4"><div class="font-medium">Sofía Arellano</div><div class="text-[12px] muted">sofia.arellano@bbva.mx</div></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">BBVA · Banca Corporativa</td>
+              <td class="px-5 py-4 num">2 de 2</td>
+              <td class="px-5 py-4 hidden lg:table-cell muted">Mesa 4</td>
+              <td class="px-5 py-4"><span class="pill pill-ok">Asistirá</span></td>
+              <td class="px-5 py-4 hidden md:table-cell muted">hace 3 d</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="border-t hair px-5 py-3 flex justify-between items-center text-xs muted">
+          <span>Mostrando 8 de 240</span>
+          <div class="flex gap-1">
+            <button class="btn btn-ghost">← Anterior</button>
+            <button class="btn btn-ghost">Siguiente →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actions -->
+      <section class="grid md:grid-cols-3 gap-4">
+        <div class="card p-6">
+          <div class="tag gold">Acción masiva</div>
+          <h3 class="display text-2xl mt-1">Recordar por WhatsApp</h3>
+          <p class="text-sm muted mt-2">A los 32 invitados pendientes con plantilla pre-aprobada.</p>
+          <button class="btn btn-dark mt-4">Enviar ahora</button>
+        </div>
+        <div class="card p-6">
+          <div class="tag gold">Pases digitales</div>
+          <h3 class="display text-2xl mt-1">Generar QR para entrada</h3>
+          <p class="text-sm muted mt-2">186 pases listos para validación en puerta.</p>
+          <button class="btn btn-ghost mt-4">Ver pases</button>
+        </div>
+        <div class="card p-6">
+          <div class="tag gold">Mesas</div>
+          <h3 class="display text-2xl mt-1">Asignación automática</h3>
+          <p class="text-sm muted mt-2">Sugerencia de acomodo por afinidad profesional.</p>
+          <button class="btn btn-ghost mt-4">Generar propuesta</button>
+        </div>
+      </section>
+
+      <p class="text-center text-xs muted py-6">Datos de demostración · <a class="underline" href="index.html">velum.mx</a></p>
+
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
