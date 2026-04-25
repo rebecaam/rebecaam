@@ -1,0 +1,17 @@
+/*
+Theme Name: DigitalU
+Theme URI: https://digitalu.cloud
+Author: Rebeca Aguilar — DigitalU
+Author URI: https://digitalu.cloud
+Description: Tema independiente para DigitalU. Reemplaza Elementor con HTML/CSS/JS plano. Liviano, rápido y mantenible. Activa este tema para sustituir el chrome del sitio (header/footer/landing) y dejar las páginas internas como bloques HTML personalizados de Gutenberg.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.9
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: digitalu
+Tags: business, one-column, custom-menu, custom-logo, full-width-template, translation-ready
+*/
+
+/* Estilos reales en assets/css/styles.css (cargado vía wp_enqueue_style en functions.php). */
